@@ -82,34 +82,37 @@ h2 {
 
 /* Floral Card */
 .floral-card {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 30px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    padding: 40px;
+    position: relative;
     width: 100%;
     max-width: 600px;
-    position: relative;
     margin: 0 auto;
-    text-align: center;
+    padding: 20px;
+    background-color: transparent;
+    /* Remove any existing background-image property here */
+}
+
+/* This creates the floral frame as a pseudo-element */
+.floral-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('FloralCard.png');
-    background-size: contain;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
+    pointer-events: none; /* This allows clicks to pass through to elements below */
+    z-index: 1; /* Places the frame above the background but below the content */
 }
 
 .card-content {
+    position: relative;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 30px;
     border-radius: 20px;
-}
-
-.floral-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #333;
-    letter-spacing: 3px;
-    font-weight: 500;
+    z-index: 2; /* This ensures the content appears above the floral frame */
 }
 
 /* Divider with Heart */
