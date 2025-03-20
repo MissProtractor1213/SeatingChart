@@ -89,6 +89,7 @@ h2 {
     margin: 0 auto;
     padding: 20px;
     background-color: transparent;
+    background-image: url('FloralCard.png');
 }
 
 .card-content {
