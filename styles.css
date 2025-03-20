@@ -81,7 +81,7 @@ h2 {
 }
 
 /* Floral Card */
-/*.floral-card {
+.floral-card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 30px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -91,7 +91,7 @@ h2 {
     position: relative;
     margin: 0 auto;
     text-align: center;
-    background-image: url('WebsiteBackground.jpg');
+    background-image: url('FloralCard.png');
     background-size: cover;
     background-position: center;
 }
@@ -109,7 +109,7 @@ h2 {
     color: #333;
     letter-spacing: 3px;
     font-weight: 500;
-}/*
+}
 
 /* Divider with Heart */
 .divider {
