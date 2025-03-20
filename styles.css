@@ -82,37 +82,34 @@ h2 {
 
 /* Floral Card */
 .floral-card {
+    /* This styles the outer container with the floral frame background */
     position: relative;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: transparent;
-    /* Remove any existing background-image property here */
-}
-
-/* This creates the floral frame as a pseudo-element */
-.floral-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('FloralCard.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    pointer-events: none; /* This allows clicks to pass through to elements below */
-    z-index: 1; /* Places the frame above the background but below the content */
 }
 
 .card-content {
+    /* This styles the inner white content area */
     position: relative;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 1); 
     padding: 30px;
     border-radius: 20px;
-    z-index: 2; /* This ensures the content appears above the floral frame */
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.floral-card h3 {
+    /* This styles the "FIND YOUR TABLE" heading */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+    letter-spacing: 3px;
+    font-weight: 500;
 }
 
 /* Divider with Heart */
