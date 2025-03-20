@@ -90,6 +90,9 @@ h2 {
     padding: 20px;
     background-color: transparent;
     background-image: url('FloralCard.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events:none;
 }
 
 .card-content {
