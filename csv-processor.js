@@ -57,7 +57,6 @@ function processGuestData(csvContent) {
             table: tableId,
             seat: guest.seat ? parseInt(guest.seat) : null,
             vietnamese_name: guest.vietnamese_name || null
-            side: guest.side || 'bride' // Default to bride's side if not specified
         });
     });
     
@@ -147,7 +146,6 @@ function processGuestData(csvContent) {
                 tableObject: table,
                 seat: guest.seat,
                 vietnamese_name: guest.vietnamese_name
-                side: guest.side || 'bride'
             });
         });
     });
