@@ -85,7 +85,7 @@ h2 {
     position: relative;
     width: 100%;
     max-width: 600px;
-    aspect-ratio: 1 / 1.5; /* Adjust this value to match your image's width/height ratio */
+    aspect-ratio: .5 / 1.5; /* Adjust this value to match your image's width/height ratio */
     margin: 0 auto;
     padding: 0; /* Remove padding */
     display: flex;
