@@ -119,39 +119,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function searchGuest() {
-        // Get the search input and normalize it
-        const searchName = nameSearchInput.value.trim().toLowerCase();
-        
-        // Hide previous results
-        resultContainer.classList.add('hidden');
-        noResultContainer.classList.add('hidden');
-        
-        // Don't search if input is empty
-        if (!searchName) {
-            return;
-        }
-        
-        // Find the guest in our data
-        const guest = findGuest(searchName);
-        
-        if (guest) {
-            // Display guest information
-            displayGuestInfo(guest);
-        } else {
-            // Show no result message
-            noResultContainer.classList.remove('hidden');
-        }
+    // Get the search input and normalize it
+    const searchName = nameSearchInput.value.trim().toLowerCase();
+    
+    // Get the selected side
+    const selectedSide = document.querySelector('input[name="side"]:checked').value;
+    
+    // Hide previous results
+    resultContainer.classList.add('hidden');
+    noResultContainer.classList.add('hidden');
+    
+    // Don't search if input is empty
+    if (!searchName) {
+        return;
     }
     
-    function findGuest(searchName) {
-        // Normalize the search input to handle partial matches and case insensitivity
-        return guestList.find(guest => 
-            guest.name.toLowerCase().includes(searchName) ||
-            searchName.includes(guest.name.toLowerCase()) ||
-            (guest.vietnamese_name && guest.vietnamese_name.toLowerCase().includes(searchName)) ||
-            (guest.vietnamese_name && searchName.includes(guest.vietnamese_name.toLowerCase()))
-        );
+    // Find the guest in our data, taking the side into account
+    const guest = findGuest(searchName, selectedSide);
+    
+    if (guest) {
+        // Display guest information
+        displayGuestInfo(guest);
+    } else {
+        // Show no result message
+        noResultContainer.classList.remove('hidden');
     }
+}
+    
+    function findGuest(searchName, side) {
+    // Filter guests by the selected side first, then find a match by name
+    const sideGuests = guestList.filter(guest => guest.side === side);
+    
+    return sideGuests.find(guest => 
+        guest.name.toLowerCase().includes(searchName) ||
+        searchName.includes(guest.name.toLowerCase()) ||
+        (guest.vietnamese_name && guest.vietnamese_name.toLowerCase().includes(searchName)) ||
+        (guest.vietnamese_name && searchName.includes(guest.vietnamese_name.toLowerCase()))
+    );
+}
     
     function displayGuestInfo(guest) {
         // Set the guest's name and table
