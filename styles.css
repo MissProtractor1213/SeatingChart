@@ -195,66 +195,6 @@ button:hover {
     background-color: #b57ad1;
 }
 
-/* Styled Radio Buttons */
-.side-selector {
-    margin: 15px 0;
-    text-align: center;
-}
-
-.side-selector p {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-}
-
-.radio-group {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.radio-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: all 0.2s ease;
-    background-color: #f9f7f5;
-}
-
-.radio-label:hover {
-    background-color: #f0e9e9;
-}
-
-.radio-label input {
-    opacity: 0;
-    position: absolute;
-}
-
-.radio-label span {
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.radio-label input:checked + span {
-    color: #c896e0;
-    font-weight: bold;
-}
-
-.radio-label::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 8px;
-    border: 2px solid #c896e0;
-}
-
-.radio-label input:checked + span::before {
-    background-color: #c896e0;
-}
-
 /* Result Container */
 .result-container, .no-result {
     margin: 40px 0;
