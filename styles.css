@@ -85,7 +85,7 @@ h2 {
     position: relative;
     width: 100%;
     max-width: 600px;
-    aspect-ratio: .5 / 1.5; /* Adjust this value to match your image's width/height ratio */
+    aspect-ratio: 0 / 1.5; /* Adjust this value to match your image's width/height ratio */
     margin: 0 auto;
     padding: 0; /* Remove padding */
     display: flex;
@@ -102,7 +102,7 @@ h2 {
     right: 0;
     bottom: 0;
     background-image: url('IMG_4948.png'); /* Your floral frame image */
-    background-size: 100% 130%; /* This stretches the image to fill the container */
+    background-size: 100% 100%; /* This stretches the image to fill the container */
     background-position: center;
     background-repeat: no-repeat;
     pointer-events: none; /* This allows clicks to pass through to elements below */
