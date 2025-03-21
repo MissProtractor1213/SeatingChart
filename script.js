@@ -119,31 +119,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function searchGuest() {
-    // Get the search input and normalize it
-    const searchName = nameSearchInput.value.trim().toLowerCase();
-    
-    // Hide previous results
-    resultContainer.classList.add('hidden');
-    noResultContainer.classList.add('hidden');
-    
-    // Don't search if input is empty
-    if (!searchName) {
-        return;
+        // Get the search input and normalize it
+        const searchName = nameSearchInput.value.trim().toLowerCase();
+        
+        // Hide previous results
+        resultContainer.classList.add('hidden');
+        noResultContainer.classList.add('hidden');
+        
+        // Don't search if input is empty
+        if (!searchName) {
+            return;
+        }
+        
+        // Find the guest in our data
+        const guest = findGuest(searchName);
+        
+        if (guest) {
+            // Display guest information
+            displayGuestInfo(guest);
+        } else {
+            // Show no result message
+            noResultContainer.classList.remove('hidden');
+        }
     }
     
-    // Find the guest in our data
-    const guest = findGuest(searchName);
-    
-    if (guest) {
-        // Display guest information
-        displayGuestInfo(guest);
-    } else {
-        // Show no result message
-        noResultContainer.classList.remove('hidden');
-    }
-}
-    
-      function findGuest(searchName) {
+    function findGuest(searchName) {
         // Normalize the search input to handle partial matches and case insensitivity
         return guestList.find(guest => 
             guest.name.toLowerCase().includes(searchName) ||
